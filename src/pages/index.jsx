@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Table from '../components/layout/Table';
 
 export default () => {

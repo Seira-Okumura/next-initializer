@@ -44,8 +44,8 @@ export default (props) => {
       'admin': <MDBBtn rounded className="btn-rounded" id="btn-admin">管理者</MDBBtn>,
       'authentication':
         <MDBBtnGroup>
-          <MDBBtn id="btn-auth-active" size="sm">ON</MDBBtn>
-          <MDBBtn id="btn-auth" size="sm">OFF</MDBBtn>
+          <MDBBtn id="btn-auth-active" className="btn-auth-on" size="sm">ON</MDBBtn>
+          <MDBBtn id="btn-auth" className="btn-auth-off" size="sm">OFF</MDBBtn>
         </MDBBtnGroup>,
       'setting': <MDBBtn outline className="btn-editaccount">編集</MDBBtn>,
       'nothing': ''
@@ -56,8 +56,8 @@ export default (props) => {
       'admin': <MDBBtn rounded className="btn-rounded" id="btn-aaa">AAA</MDBBtn>,
       'authentication':
         <MDBBtnGroup>
-          <MDBBtn id="btn-auth" size="sm">ON</MDBBtn>
-          <MDBBtn id="btn-auth-active" size="sm">OFF</MDBBtn>
+          <MDBBtn id="btn-auth" className="btn-auth-on" size="sm">ON</MDBBtn>
+          <MDBBtn id="btn-auth-active" className="btn-auth-off" size="sm">OFF</MDBBtn>
         </MDBBtnGroup>,
       'setting': <MDBBtn outline className="btn-editaccount">編集</MDBBtn>,
       'nothing': ''
@@ -68,8 +68,8 @@ export default (props) => {
       'admin': <MDBBtn rounded className="btn-rounded" id="btn-bbb">BBB</MDBBtn>,
       'authentication':
         <MDBBtnGroup>
-          <MDBBtn id="btn-auth-active" size="sm">ON</MDBBtn>
-          <MDBBtn id="btn-auth" size="sm">OFF</MDBBtn>
+          <MDBBtn id="btn-auth-active" className="btn-auth-on" size="sm">ON</MDBBtn>
+          <MDBBtn id="btn-auth" className="btn-auth-off" size="sm">OFF</MDBBtn>
         </MDBBtnGroup>,
       'setting': <MDBBtn outline className="btn-editaccount">編集</MDBBtn>,
       'nothing': ''
@@ -111,6 +111,12 @@ export default (props) => {
         background-color: #96d9d4 !important;
         width: 4rem;
         padding: 0.5rem !important;
+      }
+      :global(.btn-auth-on) {
+        margin: 0.375rem 0.375rem 0.375rem 0;
+      }
+      :global(.btn-auth-off) {
+        margin: 0.375rem 0 0.375rem 0.375rem;
       }
       :global(.btn) {
         padding: 0.5rem 1rem !important;
@@ -160,6 +166,7 @@ export default (props) => {
         border: 1px solid #2bbbad !important;
         width: 4rem;
         padding: 0.5rem !important;
+        margin: 0.375rem 0;
       }
       `}</style>
     </>

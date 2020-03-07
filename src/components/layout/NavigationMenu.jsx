@@ -13,9 +13,6 @@ const NavigationMenu = ({
   return (
     <>
       <ul className="side-menu">
-        <li className="side-menu-title">
-          <span className="nav-text current-name">スマート選挙</span>
-        </li>
         {React.Children.toArray(children)}
       </ul>
       <style global jsx>{`
@@ -24,6 +21,7 @@ const NavigationMenu = ({
           font-size: 2.4rem;
         }
         .side-menu {
+          top: 40px;
           position: absolute;
           -webkit-transform: translateZ(0) scale(1,1);
           -webkit-transition: width .2s linear;

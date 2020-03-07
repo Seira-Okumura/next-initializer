@@ -5,14 +5,15 @@ import { MDBCard, MDBContainer, MDBCardTitle, MDBCardText } from 'mdbreact';
 export default function Panel({
   title,
   children,
+  className = '',
 }) {
   return (
-    <MDBContainer>
+    <div className={className}>
       <MDBCard>
-      {title && <MDBCardTitle>{title}</MDBCardTitle>}
-      {children}
+        {title && <MDBCardTitle>{title}</MDBCardTitle>}
+        {children}
       </MDBCard>
-    </MDBContainer>
+    </div>
   );
 }
 

@@ -1,53 +1,76 @@
 import React, { Component } from "react";
-import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBDropdown,
-MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem, MDBIcon } from "mdbreact";
-import { BrowserRouter as Router } from 'react-router-dom';
+import InfoIcon from '@material-ui/icons/InfoOutlined';
 import Link from 'next/link';
+import MailBoxIcon from '@material-ui/icons/MailOutline';
+import PersonIcon from '@material-ui/icons/Person';
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBIcon,
+} from "mdbreact";
 
-class NavbarPage extends Component {
-state = {
-  isOpen: false
-};
-
-toggleCollapse = () => {
-  this.setState({ isOpen: !this.state.isOpen });
-}
-
-render() {
+export default function Navbar() {
   return (
-    <Router>
-      <MDBNavbar color="default-color" dark expand="md">
+    <>
+      <MDBNavbar expand="md">
         <MDBNavbarBrand>
-          <strong className="white-text">Navbar</strong>
+          スマート選挙
         </MDBNavbarBrand>
-        <MDBNavbarToggler onClick={this.toggleCollapse} />
-        <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
-          <MDBNavbarNav right>
-            <Link className="waves-effect waves-light" href="#">
-                <MDBIcon fab icon="twitter" />
-            </Link>
-            <Link className="waves-effect waves-light" href="#">
-                <MDBIcon fab icon="google-plus-g" />
-            </Link>
-            <MDBNavItem>
-              <MDBDropdown>
-                <MDBDropdownToggle nav caret>
-                  <MDBIcon icon="user" />
-                </MDBDropdownToggle>
-                <MDBDropdownMenu className="dropdown-default">
-                  <MDBDropdownItem href="#!">Action</MDBDropdownItem>
-                  <MDBDropdownItem href="#!">Another Action</MDBDropdownItem>
-                  <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                  <MDBDropdownItem href="#!">Something else here</MDBDropdownItem>
-                </MDBDropdownMenu>
-              </MDBDropdown>
-            </MDBNavItem>
-          </MDBNavbarNav>
-        </MDBCollapse>
+        <MDBNavbarNav left>
+          <MDBIcon icon="search" />
+          <input className="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" />
+        </MDBNavbarNav>
+        <MDBNavbarNav right>
+          <Link href="/user">
+            <PersonIcon />
+          </Link>
+          <Link href="/message">
+            <MailBoxIcon />
+          </Link>
+          <Link href="/info">
+            <InfoIcon />
+          </Link>
+          <img src="https://i2.wp.com/is-factory.com/wp-content/uploads/2014/07/-2014-07-15-18.24.16-e1405421299511.jpg" width="30" height="30"/>
+        </MDBNavbarNav>
       </MDBNavbar>
-    </Router>
-    );
-  }
+      <style global jsx>{`
+        .navbar {
+          color: #333;
+          background-color: #fff;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100vw;
+          height: 40px;
+          z-index: 101;
+          font-size: 14px;
+        }
+        .navbar .MuiSvgIcon-root {
+          font-size: 18px;
+          margin: .4rem;
+        }
+        .navbar-brand {
+          font-size: 24px;
+          width: 190px;
+          margin: 0;
+          text-align: center;
+          padding-right: 1rem;
+          margin-right: 2rem;
+        }
+        .navbar-nav input {
+          height: 24px;
+          width: 160px !important;
+          background-color: #cfe2ff;
+          border: none;
+        }
+        .fa.fa-search {
+          padding-top: .4rem;
+        }
+        .navbar img {
+          border-radius: 15px;
+        }
+      `}</style>
+    </>
+  );
 }
-
-export default NavbarPage;

@@ -12,9 +12,6 @@ export default function Panel({
       {title && <MDBCardTitle>{title}</MDBCardTitle>}
       {children}
       </MDBCard>
-      <style jsx>{`
-        
-      `}</style>
     </MDBContainer>
   );
 }

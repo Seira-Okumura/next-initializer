@@ -78,10 +78,10 @@ export default (props) => {
 
   return (
     <>
-      <div className="account-table-header" style={{display: "flex"}}>
-        <MDBBtn className="btn-addaccount" size="sm">アカウント新規作成</MDBBtn>
-        <div style={{display: "flex", margin: "0.375rem 0"}}>
-          <span style={{margin: "auto 5px auto 0"}}>ログインアカウント数</span>
+      <div className="account-table-container">
+        <div className="account-table-header" style={{ display: "flex" }}>
+          <MDBBtn className="btn-addaccount" size="sm">アカウント新規作成</MDBBtn>
+          <span style={{ margin: "auto 5px auto 0" }}>ログインアカウント数</span>
           <MDBProgress
             material
             value={60}
@@ -89,14 +89,17 @@ export default (props) => {
             className="progress-ligin"
           >
             3人/5人
-          </MDBProgress>
+        </MDBProgress>
         </div>
+        <MDBTable btn striped>
+          <MDBTableHead columns={columns} />
+          <MDBTableBody rows={rows_rounded_btn} />
+        </MDBTable>
       </div>
-      <MDBTable btn striped>
-        <MDBTableHead columns={columns} />
-        <MDBTableBody rows={rows_rounded_btn} />
-      </MDBTable>
       <style jsx>{`
+        .account-table-container {
+          margin: 3rem;
+        }
         .account-table-header {
           display: flex;
           justify-content: space-between;

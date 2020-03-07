@@ -28,16 +28,16 @@ const primary = '#26abe3';
 const secondary = '#d8d8d8';
 const contrast = '#21282f';
 
-const height = 500;
-const width = window.innerWidth - 42;
-const margin = {
-  right: 100,
-  left: 100,
-  top: 100,
-  bottom: 100
-};
-
-export default function LineChart() {
+export default function LineChart({
+  width = 640,
+  height = 280,
+  margin = {
+    right: 50,
+    left: 50,
+    top: 50,
+    bottom: 50,
+  }
+}) {
   // bounds
   const xMax = width - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -54,7 +54,7 @@ export default function LineChart() {
         width={width}
         height={height}
         fill={secondary}
-        rx={14}
+        rx={2}
       />
       <Group top={margin.top}>
         <LinePath
@@ -62,7 +62,7 @@ export default function LineChart() {
           x={x}
           y={y}
           stroke={primary}
-          strokeWidth={2}
+          strokeWidth={3}
         />
         {data.map((d, i) => {
           const cx = x(d);

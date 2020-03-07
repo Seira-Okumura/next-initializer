@@ -1,2 +1,2 @@
-Next initializer
+Next MDBReact
 =======

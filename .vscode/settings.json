@@ -8,5 +8,8 @@
   "editor.formatOnSave": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.jsx": "javascriptreact"
   }
 }

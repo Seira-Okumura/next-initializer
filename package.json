@@ -11,6 +11,12 @@
   "dependencies": {
     "@material-ui/core": "^4.9.5",
     "@material-ui/icons": "^4.9.1",
+    "@vx/curve": "^0.0.195",
+    "@vx/glyph": "^0.0.195",
+    "@vx/group": "^0.0.195",
+    "@vx/mock-data": "^0.0.195",
+    "@vx/scale": "^0.0.195",
+    "@vx/shape": "^0.0.195",
     "next": "^9.2.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0"

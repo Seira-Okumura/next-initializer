@@ -1,8 +1,11 @@
-{
+module.exports = {
   "env": {
     "es6": true,
     "shared-node-browser": true
   },
+  "parserOptions": {
+    "sourceType": "module"
+  }
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended"

@@ -13,8 +13,10 @@ export default ({ children }) => {
       </div>
       <style jsx>{`
         .content {
-          padding-left: 200px;
-          padding-top: 52px;
+          padding-left: 215px;
+          padding-top: 67px;
+          max-width: 100%;
+          overflow: auto;
         }
       `}</style>
     </>

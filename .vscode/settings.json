@@ -11,6 +11,5 @@
   },
   "files.associations": {
     "*.jsx": "javascriptreact"
-  },
-  "files.autoGuessEncoding": true
+  }
 }

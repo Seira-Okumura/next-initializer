@@ -113,7 +113,7 @@ export const SideMenu = ({
           font-size: 2.4rem;
         }
         .side-menu {
-          top: 40px;
+          top: 52px;
           position: absolute;
           -webkit-transform: translateZ(0) scale(1,1);
           -webkit-transition: width .2s linear;
@@ -122,7 +122,6 @@ export const SideMenu = ({
           box-shadow: 1px 0 15px rgba(0, 0, 0, 0.07);
           height: 100%;
           left: 0;
-          top: 0;
           padding: 0;
           z-index: 100;
           width: 200px;

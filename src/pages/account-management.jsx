@@ -4,22 +4,17 @@ import NavigationMenu, { Navigation, ToggleList, Subtitle } from '../components/
 import Panel from '../components/layout/Panel';
 import Table from '../components/layout/Table';
 import Navbar from '../components/layout/NavBar';
+import Layout from '../components/layout/Layout';
 
 export default () => {
   return (
     <>
-      <div className="content">
-        <Navbar />
-        <NavigationMenu />
+      <Layout>
         <Panel className="account-table-panel">
           <Table />
         </Panel>
-      </div>
+      </Layout>
       <style global jsx>{`
-        .content {
-          padding-left: 200px;
-          padding-top: 40px;
-        }
         .account-table-panel {
           top: 1rem;
           margin: 3rem;

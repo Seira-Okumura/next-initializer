@@ -42,7 +42,7 @@ export default function Navbar() {
           top: 0;
           left: 0;
           width: 100vw;
-          height: 40px;
+          height: 52px;
           z-index: 101;
           font-size: 14px;
         }

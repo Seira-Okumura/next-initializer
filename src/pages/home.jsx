@@ -6,7 +6,7 @@ import Panel from '../components/layout/Panel';
 export default function Home() {
   return (
     <>
-      <Panel title="チャート">
+      <Panel title="登録者数">
         <div className="chart-container">
           <LineChart />
         </div>

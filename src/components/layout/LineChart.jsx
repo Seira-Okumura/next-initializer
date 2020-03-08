@@ -24,9 +24,9 @@ const x = d => xScale(date(d));
 const y = d => yScale(value(d));
 
 // colors
-const primary = '#26abe3';
-const secondary = '#d8d8d8';
-const contrast = '#21282f';
+const line = '#57d5ff';
+const white = '#fff';
+const gray = '#ddd';
 
 export default function LineChart({
   width = 640,
@@ -53,7 +53,7 @@ export default function LineChart({
         y={0}
         width={width}
         height={height}
-        fill={secondary}
+        fill={white}
         rx={2}
       />
       <Group top={margin.top}>
@@ -61,7 +61,7 @@ export default function LineChart({
           data={data}
           x={x}
           y={y}
-          stroke={primary}
+          stroke={line}
           strokeWidth={3}
         />
         {data.map((d, i) => {
@@ -69,7 +69,8 @@ export default function LineChart({
           const cy = y(d);
           return (
             <g key={`line-point-${i}`}>
-              <GlyphDot cx={cx} cy={cy} r={3} fill={contrast} />
+              <GlyphDot cx={cx} cy={cy} r={3} fill={line} />
+              <GlyphDot cx={cx} cy={cy} r={2} fill={white} />
             </g>
           );
         })}

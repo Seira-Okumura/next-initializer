@@ -1,12 +1,104 @@
 import * as React from 'react';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import AddIcon from '@material-ui/icons/Add';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import Link from 'next/link';
 import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
+import RollIcon from '@material-ui/icons/Theaters';
+import TimelineIcon from '@material-ui/icons/Timeline';
 import clsx from 'clsx';
 
-const NavigationMenu = ({
+export default () => {
+  return (
+    <SideMenu>
+      <Navigation
+        Icon={HomeOutlinedIcon}
+        href="/home"
+        key="1"
+        title="ホーム"
+      />
+      <Navigation
+        Icon={TimelineIcon}
+        href="/home"
+        key="2"
+        title="タイトル２"
+      />
+      <ToggleList title="リスト">
+        <Subtitle
+          key="1"
+          subtitle="個人名簿">
+          <Navigation
+            Icon={HomeOutlinedIcon}
+            href="/home"
+            key="1"
+            title="ホーム"
+          />
+          <Navigation
+            Icon={TimelineIcon}
+            href="/home"
+            key="2"
+            title="タイトル２"
+          />
+          <Navigation
+            Icon={RollIcon}
+            href="/home"
+            key="3"
+            title="タイトル３"
+          />
+          <Navigation
+            Icon={RollIcon}
+            href="/home"
+            key="4"
+            title="タイトル４"
+          />
+        </Subtitle>
+        <Subtitle
+          key="2"
+          subtitle="企業名簿">
+          <Navigation
+            Icon={HomeOutlinedIcon}
+            href="/home"
+            key="1"
+            title="ホーム"
+          />
+          <Navigation
+            Icon={TimelineIcon}
+            href="/home"
+            key="2"
+            title="タイトル２"
+          />
+          <Navigation
+            Icon={RollIcon}
+            href="/home"
+            key="3"
+            title="タイトル３"
+          />
+          <Navigation
+            Icon={RollIcon}
+            href="/home"
+            key="4"
+            title="タイトル４"
+          />
+        </Subtitle>
+      </ToggleList>
+      <Navigation
+        Icon={RollIcon}
+        href="/home"
+        key="3"
+        title="タイトル３"
+      />
+      <Navigation
+        Icon={RollIcon}
+        href="/home"
+        key="4"
+        title="タイトル４"
+      />
+    </SideMenu>
+  );
+}
+
+export const SideMenu = ({
   children,
   name,
 }) => {
@@ -44,7 +136,7 @@ const NavigationMenu = ({
           transition: background-color .2s;
         }
         .side-menu .side-menu-navigation:hover {
-          background-color: #b1cefc;
+          background-color: #cfe2ff;
           color: #3d88ff;
         }
         .togglelist {
@@ -157,5 +249,3 @@ export const Navigation = ({
     </li>
   );
 };
-
-export default NavigationMenu;

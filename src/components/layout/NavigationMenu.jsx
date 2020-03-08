@@ -3,6 +3,7 @@ import AddIcon from '@material-ui/icons/Add';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
+import BallotOutlinedIcon from '@material-ui/icons/BallotOutlined';
 import Link from 'next/link';
 import RemoveIcon from '@material-ui/icons/Remove';
 import RollIcon from '@material-ui/icons/Theaters';
@@ -15,16 +16,13 @@ export default () => {
       <Navigation
         Icon={HomeOutlinedIcon}
         href="/home"
-        key="1"
+        className="nav1-text nav1-active"
         title="ホーム"
       />
-      <Navigation
-        Icon={TimelineIcon}
-        href="/home"
-        key="2"
-        title="タイトル２"
-      />
-      <ToggleList title="リスト">
+      <ToggleList
+        Icon={BallotOutlinedIcon}
+        title="リスト"
+      >
         <Subtitle
           key="1"
           subtitle="個人名簿">
@@ -125,6 +123,7 @@ export const SideMenu = ({
           padding: 0;
           z-index: 100;
           width: 200px;
+          font-size: 14px;
         }
         .side-menu .side-menu-navigation {
           height: 4rem;
@@ -135,12 +134,22 @@ export const SideMenu = ({
           transition: background-color .2s;
         }
         .side-menu .side-menu-navigation:hover {
-          background-color: #cfe2ff;
-          color: #3d88ff;
+          background-color: #dfedff;
+          color: #4b72dd;
         }
-        .togglelist {
+        .side-menu .togglelist {
+          height: 4rem;
+          width: 200px;
           justify-content: space-between;
-          font-size: 14px;
+          background-color: #eee;
+          color: #777;
+          display: flex;
+          align-items: center;
+          padding: .5rem 1rem;
+        }
+        .togglelist:hover {
+          background-color: #dfedff;
+          color: #4b72dd;
         }
         .togglelist-icon {
           font-size: 14px;
@@ -158,7 +167,7 @@ export const SideMenu = ({
           text-decoration: none;
         }
         .side-menu .MuiSvgIcon-root {
-          font-size: 14px;
+          font-size: 18px;
           width: 30px;
         }
         .side-menu :global(.nav-text) {
@@ -171,12 +180,19 @@ export const SideMenu = ({
           height: 5.2rem;
           width: 220px;
         }
+        .subtitle {
+          font-size: 10px;
+        }
+        .subtitle .MuiSvgIcon-root {
+          font-size: 14px;
+        }
       `}</style>
     </>
   );
 };
 
 export const ToggleList = ({
+  Icon,
   title,
   children,
 }) => {
@@ -188,10 +204,13 @@ export const ToggleList = ({
   return (
     <>
       <li
-        className="side-menu-navigation togglelist nav-link"
+        className="togglelist"
         onClick={onClick}
       >
-        {title}
+        <div>
+          {Icon && <Icon />}
+          {title}
+        </div>
         <span className="togglelist-icon">
           {isExpand ? <RemoveIcon /> : <AddIcon />}
         </span>
@@ -214,7 +233,7 @@ export const Subtitle = ({
   return (
     <>
       <li
-        className="side-menu-navigation"
+        className="side-menu-navigation subtitle"
         onClick={onClick}>
         <span className="togglelist-icon">
           {isExpand ? <ExpandMore /> : <ArrowForwardIosIcon />}

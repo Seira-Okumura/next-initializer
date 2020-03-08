@@ -13,6 +13,11 @@ export default function Panel({
         {title && <MDBCardTitle>{title}</MDBCardTitle>}
         {children}
       </MDBCard>
+      <style global jsx>{`
+        .card {
+          padding: 10px;
+        }
+      `}</style>
     </div>
   );
 }

@@ -106,7 +106,7 @@ export default (props) => {
       </div>
       <style jsx>{`
         .account-table-container {
-          margin: 0 3rem;
+          margin: 19px 0;
           min-height: calc(100vh - 30rem);
         }
         .account-table-header {

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import InfoIcon from '@material-ui/icons/InfoOutlined';
 import Link from 'next/link';
 import MailBoxIcon from '@material-ui/icons/MailOutline';
-import PersonIcon from '@material-ui/icons/Person';
+import PersonIcon from '@material-ui/icons/PersonOutlined';
 import {
   MDBNavbar,
   MDBNavbarBrand,
@@ -23,15 +23,21 @@ export default function Navbar() {
         </MDBNavbarNav>
         <MDBNavbarNav right>
           <Link href="/user">
-            <PersonIcon />
+            <div className="notification">
+              <PersonIcon />
+              <span className="badge">1</span>
+            </div>
           </Link>
           <Link href="/message">
-            <MailBoxIcon />
+            <div className="notification">
+              <MailBoxIcon />
+              <span className="badge">16</span>
+            </div>
           </Link>
           <Link href="/info">
             <InfoIcon />
           </Link>
-          <img src="https://i2.wp.com/is-factory.com/wp-content/uploads/2014/07/-2014-07-15-18.24.16-e1405421299511.jpg" width="30" height="30"/>
+          <img src="https://i2.wp.com/is-factory.com/wp-content/uploads/2014/07/-2014-07-15-18.24.16-e1405421299511.jpg" width="30" height="30" />
         </MDBNavbarNav>
       </MDBNavbar>
       <style global jsx>{`
@@ -45,10 +51,11 @@ export default function Navbar() {
           height: 52px;
           z-index: 101;
           font-size: 14px;
+          padding-right: 30px;
         }
         .navbar .MuiSvgIcon-root {
           font-size: 18px;
-          margin: .4rem;
+          margin: .4rem 20px .4rem .4rem;
         }
         .navbar-brand {
           font-size: 24px;
@@ -59,16 +66,35 @@ export default function Navbar() {
           margin-right: 2rem;
         }
         .navbar-nav input {
-          height: 24px;
+          height: 30px;
           width: 160px !important;
           background-color: #cfe2ff;
           border: none;
         }
         .fa.fa-search {
-          padding-top: .4rem;
+          padding-top: 0.7rem;
         }
         .navbar img {
-          border-radius: 15px;
+          border-radius: 5px;
+          width: 25px;
+          height: 25px;
+        }
+        .notification {
+          position: relative;
+          display: inline-block !important;
+        }
+        .notification .badge {
+          position: absolute;
+          top: -3px;
+          right: 6px;
+          padding: 4px;
+          border-radius: 50%;
+          background: red;
+          color: white;
+          font-size: 10px;
+          min-width: 2rem;
+          height: 2rem;
+          padding-top: 5px;
         }
       `}</style>
     </>

@@ -3,8 +3,7 @@ import React from 'react';
 import NavigationMenu, { Navigation, ToggleList, Subtitle } from '../components/layout/NavigationMenu';
 import Panel from '../components/layout/Panel';
 import Table from '../components/layout/Table';
-import Navbar from '../components/layout/NavBar';
-import Layout from '../components/layout/Layout';
+import NavBar from '../components/layout/NavBar';
 
 export default () => {
   return (
